@@ -63,32 +63,32 @@
 
 
 //Add methods for UIGestures
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-        
-        UITouch *touch = [touches anyObject];
-        [self.view setUserInteractionEnabled:NO];
-      //  self.firstPoint = [touch locationInView:self.view];
-
-        
-
-}
-
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    
-    //  [self.swipeTimer invalidate];
-    
-    //  NSLog(@"the timer stops at %f seconds", swipeTime);
-    
-    UITouch *touch = [touches anyObject];
-    //self.lastPoint = [touch locationInView:self.view];
-    
- //   CGPoint tapVector = rwSub(self.lastPoint, self.firstPoint); // (vector) last point - first point
-
-    
-}
+//
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//        
+//        UITouch *touch = [touches anyObject];
+//        [self.view setUserInteractionEnabled:NO];
+//      //  self.firstPoint = [touch locationInView:self.view];
+//
+//        
+//
+//}
+//
+//
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    
+//    
+//    //  [self.swipeTimer invalidate];
+//    
+//    //  NSLog(@"the timer stops at %f seconds", swipeTime);
+//    
+//    UITouch *touch = [touches anyObject];
+//    //self.lastPoint = [touch locationInView:self.view];
+//    
+// //   CGPoint tapVector = rwSub(self.lastPoint, self.firstPoint); // (vector) last point - first point
+//
+//    
+//}
 
 
 - (IBAction)keyPressed:(id)sender {
