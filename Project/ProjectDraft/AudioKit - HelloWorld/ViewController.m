@@ -53,14 +53,49 @@
     
     
     // Connect the UISliders to the AKInstrumentProperty objects
-//    modulationFrequency.property = fmInstrument.modFreq;
-//    modulationIndex.property     = fmInstrument.modIndex;
-//    amplitude.property           = fmInstrument.amp;
-    
+ 
+//    self.amplitude = self.volume;
     
 
 }
 
+- (IBAction)myUnwindAction:(UIStoryboardSegue*)unwindSegue{
+    //Set volume here
+    //ViewController2 *view = [segue sourceViewController];
+    
+    NSLog(@"Unwindedededed"); //Debugging
+    
+    if ([unwindSegue.identifier isEqualToString:@"saved"]) {
+        ViewController2 *view2 = (ViewController2 *)unwindSegue.sourceViewController;
+        NSLog(@"Violets are %f", view2.sliderValue);
+    }
+    
+    //Retrieve the slider value
+    
+    
+}
+
+//- (IBAction)myUnwindAction:(UIStoryboardSegue *)segue
+//{
+// 
+//   
+//    if ([segue.sourceViewController isKindOfClass:[ViewController2 class]]) {
+//        ViewController2 *colorsViewConroller = segue.sourceViewController;
+//        // if the user clicked Cancel, we don't want to change the color
+////        if (colorsViewConroller.selectedColor) {
+////            self.view.backgroundColor = colorsViewConroller.selectedColor;
+////        }
+//        
+//        self.amplitude.property = self.*volume.value;
+//        
+//    }
+//}
+
+//-(void)setAmp:(int)amplitude
+//{
+//    _amplitude = amplitude;
+//    self.view.amplitude = amplitude;
+//}
 
 //Add methods for UIGestures
 //

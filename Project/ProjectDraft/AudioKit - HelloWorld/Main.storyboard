@@ -4,6 +4,49 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
+        <!--View Controller2-->
+        <scene sceneID="Qse-V0-gi9">
+            <objects>
+                <viewController id="N6y-6P-isJ" customClass="ViewController2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fUS-U5-qjw"/>
+                        <viewControllerLayoutGuide type="bottom" id="DUW-kg-qWT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mWa-wg-Dtz">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="pEt-nk-Cf7" customClass="AKPropertySlider">
+                                <rect key="frame" x="41" y="85" width="118" height="31"/>
+                                <animations/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-dU-Q6u">
+                                <rect key="frame" x="160" y="170" width="34" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="goBack" destination="dod-eK-QdW" eventType="touchUpInside" id="LGt-70-iTt"/>
+                                    <action selector="saved:" destination="N6y-6P-isJ" eventType="touchDown" id="LcR-ip-vO0"/>
+                                    <segue destination="KNB-sQ-7n9" kind="unwind" identifier="saved" unwindAction="myUnwindAction:" id="Lm7-gq-abo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="400"/>
+                    <connections>
+                        <outlet property="volume" destination="pEt-nk-Cf7" id="c7u-nF-NYh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dod-eK-QdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KNB-sQ-7n9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1680" y="151"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -297,6 +340,16 @@
                                     <action selector="keyReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajm-bw-ZlX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-EM-nU7">
+                                <rect key="frame" x="950" y="701" width="54" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Options"/>
+                                <connections>
+                                    <segue destination="N6y-6P-isJ" kind="popoverPresentation" identifier="options" popoverAnchorView="2y3-EM-nU7" id="WP9-Ch-kvJ">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -305,6 +358,7 @@
                             <outletCollection property="gestureRecognizers" destination="36l-B7-GI1" appends="YES" id="LD2-d4-k55"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="6si-e3-xHi"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>

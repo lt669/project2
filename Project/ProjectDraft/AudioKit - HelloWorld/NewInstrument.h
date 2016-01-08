@@ -16,6 +16,7 @@
 //@property (nonatomic, strong) AKOscillator *osc;
 @property (nonatomic, strong) AKMandolin *mandolin;
 @property (nonatomic, strong) AKInstrumentProperty *freq;
+@property (nonatomic, strong) AKInstrumentProperty *amp;
 
 @end
 

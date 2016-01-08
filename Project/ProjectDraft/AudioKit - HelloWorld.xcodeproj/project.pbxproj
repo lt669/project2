@@ -195,6 +195,7 @@
 		6054CD001B3ACBCF008D2E50 /* AKPropertySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6054CC4B1B3ACBCF008D2E50 /* AKPropertySlider.m */; };
 		6054CD011B3ACBCF008D2E50 /* LevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6054CC4D1B3ACBCF008D2E50 /* LevelMeter.m */; };
 		6054CD051B3ADCEC008D2E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6054CD041B3ADCEC008D2E50 /* Main.storyboard */; };
+		F6777D8D1C3FF8590036CB29 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777D8C1C3FF8590036CB29 /* ViewController2.m */; settings = {ASSET_TAGS = (); }; };
 		F6E2D9021C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90A1C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90F1C3CA062008DEE1C /* Strings_V2.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */; settings = {ASSET_TAGS = (); }; };
@@ -607,6 +608,8 @@
 		6054CC4C1B3ACBCF008D2E50 /* LevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMeter.h; sourceTree = "<group>"; };
 		6054CC4D1B3ACBCF008D2E50 /* LevelMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMeter.m; sourceTree = "<group>"; };
 		6054CD041B3ADCEC008D2E50 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F6777D8C1C3FF8590036CB29 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		F6777D8E1C3FF8880036CB29 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Light-Wood-Background-Wallpaper.jpg"; sourceTree = "<group>"; };
 		F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regal_Blue_Comet_mandolin_fretboardV3.png; sourceTree = "<group>"; };
 		F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Strings_V2.1.png; sourceTree = "<group>"; };
@@ -662,6 +665,8 @@
 				6054CA7F1B3ACB41008D2E50 /* ViewController.h */,
 				6054CA801B3ACB41008D2E50 /* ViewController.m */,
 				6054CD041B3ADCEC008D2E50 /* Main.storyboard */,
+				F6777D8C1C3FF8590036CB29 /* ViewController2.m */,
+				F6777D8E1C3FF8880036CB29 /* ViewController2.h */,
 				6054CA781B3ACB41008D2E50 /* Supporting Files */,
 			);
 			path = "AudioKit - HelloWorld";
@@ -1729,6 +1734,7 @@
 				6054CC891B3ACBCF008D2E50 /* AKSandPaper.m in Sources */,
 				6054CCB51B3ACBCF008D2E50 /* AKVariableFrequencyResponseBandPassFilter.m in Sources */,
 				6054CC921B3ACBCF008D2E50 /* AKSimpleWaveGuideModel.m in Sources */,
+				F6777D8D1C3FF8590036CB29 /* ViewController2.m in Sources */,
 				6054CCF21B3ACBCF008D2E50 /* AKStereoOutputPlot.m in Sources */,
 				6054CCB41B3ACBCF008D2E50 /* AKThreePoleLowpassFilter.m in Sources */,
 				6054CC781B3ACBCF008D2E50 /* AKPortamento.m in Sources */,

@@ -13,7 +13,7 @@
 
 // Produces setter and getter function for controlling properties 
 //@synthesize osc;
-@synthesize mandolin /*,freq*/;
+@synthesize mandolin, amp;
 - (instancetype)init
 {
     // Firstly, we must call the intialisation code for the inherited class (AKInstrument)
@@ -31,10 +31,12 @@
 
         //Send parameter to mandolin
          mandolin.bodySize = akp(0.5);
-         mandolin.amplitude = akp(0.5);
          mandolin.pairedStringDetuning = akp(0.3 );
          mandolin.frequency = note.frequency;
 
+         //mandolin.amplitude = akp(0.5); This is now controlled elsewhere
+        
+        amp  = [self createPropertyWithValue:0.5 minimum:0  maximum:1];
         
         // Output source of the instrument
         [self setAudioOutput:mandolin];

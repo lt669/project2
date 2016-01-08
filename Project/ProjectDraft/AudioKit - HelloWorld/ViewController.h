@@ -10,9 +10,13 @@
 // These imports are required to utilise AudioKit functionality within this class and also access the AKInstrument definition declared in the 'NewInstrument' class.
 #import "AKFoundation.h"
 #import "NewInstrument.h"
+#import "ViewController2.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic) CGPoint coordinates;
+@property (nonatomic) int amplitude;
+
+
 
 @end
 
