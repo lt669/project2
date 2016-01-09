@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="pEt-nk-Cf7" customClass="AKPropertySlider">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pEt-nk-Cf7">
                                 <rect key="frame" x="41" y="85" width="118" height="31"/>
                                 <animations/>
                             </slider>
@@ -348,6 +348,14 @@
                                     <segue destination="N6y-6P-isJ" kind="popoverPresentation" identifier="options" popoverAnchorView="2y3-EM-nU7" id="WP9-Ch-kvJ">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIk-93-J2o">
+                                <rect key="frame" x="0.0" y="246" width="106" height="42"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="keyPressed:" destination="BYZ-38-t0r" eventType="touchDragExit" id="dM4-8t-bt2"/>
                                 </connections>
                             </button>
                         </subviews>

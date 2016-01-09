@@ -2,8 +2,8 @@
 //  ViewController2.m
 //  AudioKit - HelloWorld
 //
-//  Created by lewis thresh on 08/01/2016.
-//  Copyright © 2016 Sam Beedell. All rights reserved.
+//  Created by Y8185682 on 01/01/2016.
+//  Copyright (c) 2015 Y8185682. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,7 +18,7 @@
 
 @implementation ViewController2
 {
-    IBOutlet AKPropertySlider *volume;
+    IBOutlet UISlider *volume;
 }
 
 
@@ -28,7 +28,7 @@
 
 
 - (IBAction)saved:(UIButton *)sender {
-    self.sliderValue = volume.value;
+    self.sliderValue = volume.value; //
 }
 
 ////seding data from here to ViewController (main page)

@@ -2,8 +2,8 @@
 //  ViewController.m
 //  AudioKit - HelloWorld
 //
-//  Created by Sam Beedell on 24/06/2015.
-//  Copyright (c) 2015 Sam Beedell. All rights reserved.
+//  Created by Y8185682 on 01/01/2016.
+//  Copyright (c) 2015 Y8185682. All rights reserved.
 //
 //  ------------------------------------------------------------------------
 //  Description:
@@ -21,8 +21,7 @@
 @implementation ViewController
 {
     NewInstrument *newInstrument; // The AKInstrument subclass declaration
-    IBOutlet UIButton *freqButton;
-    int neckFreq;
+    //float amplitude; //******Does this have to be in .h and  ?*****
     
     NewInstrumentNote *note; // This is the AKNote subclass declaration
     
@@ -32,30 +31,26 @@
     NSMutableDictionary *currentNotes;
 }
 
+@synthesize amplitude;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//     frequencies = @[@196, @207.7, @220.0, @233.1 ,@246.9, @261.6,	@277.2,	@293.7,	@311.1,	@329.6,	@349.2,	@370.0,	@392.0,	@415.3,	@440.0,	@466.2,	@493.9, @523.3,	@554.4,	@587.3,	@622.3,	@659.3,	@698.5,	@740.0,	@784.0,	@830.6,	@880.0];
-    
-//     frequencies = @[@311.1, @329.6,	@349.2,	@370.0,	@392.0,	@415.3,	@440.0,	@466.2,	@493.9, @523.3,	@554.4,	@587.3,	@622.3,	@659.3,	@698.5,	@740.0,	@784.0,	@830.6,	@880.0, @932.3,	@987.8, @1047,	 @1109,	@1175,	@1245,	@1319,	@1397];
-    
+    //Load all the frequency values into a dictionary
     frequencies = @[@622.3,	@659.3,	@698.5,	@740.0,	@784.0,	@830.6,	@880.0, @932.3,	@987.8, @1047,	@1109,	@1175,	@1245,	@1319,	@1397, @1480,	@1568,	@1661,	@1760,	@1865,	@1976,
                     @2093,	@2217,	@2349,	@2489,	@2637,	@2794, @2960];
     
     currentNotes = [NSMutableDictionary dictionary];
     
-    // Allocate memory for the AKInstrument subclass and run its 'init' method.
+    //Allocate memory for the AKInstrument subclass and run its 'init' method.
     newInstrument = [[NewInstrument alloc] init];
     
-    // Add the declared AudioKit instrument(s) to the AKOrchestra which is the environment for all instruments
+    //Add the declared AudioKit instrument(s) to the AKOrchestra
     [AKOrchestra addInstrument:newInstrument];
     
-    
-    // Connect the UISliders to the AKInstrumentProperty objects
- 
-//    self.amplitude = self.volume;
-    
+    //Connect the UISliders to the AKInstrumentProperty objects
+    //amplitude = newInstrument.amp;
 
 }
 
@@ -63,33 +58,30 @@
     //Set volume here
     //ViewController2 *view = [segue sourceViewController];
     
-    NSLog(@"Unwindedededed"); //Debugging
+    NSLog(@"Unwindedededed"); // (DEBUGGING)
     
-    if ([unwindSegue.identifier isEqualToString:@"saved"]) {
+    if ([unwindSegue.identifier isEqualToString:@"saved"]) { //Check that the correct segue has occured
         ViewController2 *view2 = (ViewController2 *)unwindSegue.sourceViewController;
-        NSLog(@"Violets are %f", view2.sliderValue);
+        
+        //Retrieve the slider value
+        amplitude = view2.sliderValue;
+
+        [newInstrument.amp setValue:amplitude];
+        
+        /*********************TESTING*********************/
+        NSLog(@"view2.sliderValue: %f", view2.sliderValue); //Check they are the same value (DEBUGGING)
+        NSLog(@"Amplitude: %f", amplitude);
+        [newInstrument getAmplitude];
+        /*********************TESTING*********************/
+        
+//        newInstrument.amp = view2.sliderValue;
+         //amplitude = newInstrument.amp;
     }
-    
-    //Retrieve the slider value
-    
-    
 }
 
-//- (IBAction)myUnwindAction:(UIStoryboardSegue *)segue
-//{
-// 
-//   
-//    if ([segue.sourceViewController isKindOfClass:[ViewController2 class]]) {
-//        ViewController2 *colorsViewConroller = segue.sourceViewController;
-//        // if the user clicked Cancel, we don't want to change the color
-////        if (colorsViewConroller.selectedColor) {
-////            self.view.backgroundColor = colorsViewConroller.selectedColor;
-////        }
-//        
-//        self.amplitude.property = self.*volume.value;
-//        
-//    }
-//}
+
+
+
 
 //-(void)setAmp:(int)amplitude
 //{

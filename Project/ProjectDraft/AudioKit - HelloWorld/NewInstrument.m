@@ -2,12 +2,13 @@
 //  NewInstrument.h
 //  AudioKit - HelloWorld
 //
-//  Created by Lewis Thresh on ?/?/2015.
-//  Copyright (c) 2015 Lewis Thresh. All rights reserved.
+//  Created by Y8185682 on 01/01/2016.
+//  Copyright (c) 2015 Y8185682. All rights reserved.
 //
 
 
 #import "NewInstrument.h"
+#import "ViewController2.h"
 
 @implementation NewInstrument
 
@@ -25,7 +26,7 @@
         NewInstrumentNote *note = [[NewInstrumentNote alloc] init];
         
         // Instrument Definition
-        //osc = [AKOscillator oscillator];
+        
         mandolin = [AKMandolin mandolin];
      
 
@@ -36,7 +37,10 @@
 
          //mandolin.amplitude = akp(0.5); This is now controlled elsewhere
         
+        
         amp  = [self createPropertyWithValue:0.5 minimum:0  maximum:1];
+        
+        mandolin.amplitude = amp;
         
         // Output source of the instrument
         [self setAudioOutput:mandolin];
@@ -44,6 +48,29 @@
     }
     return self;
 }
+
+-(void)getAmplitude{
+    NSLog(@"Get Amplitude Called!");
+}
+
+//- (IBAction)myUnwindAction:(UIStoryboardSegue*)unwindSegue{
+//    //Set volume here
+//    //ViewController2 *view = [segue sourceViewController];
+//    
+//    NSLog(@"Unwindedededed"); //Debugging
+//    
+//    if ([unwindSegue.identifier isEqualToString:@"saved"]) {
+//        ViewController2 *view2 = (ViewController2 *)unwindSegue.sourceViewController;
+//        NSLog(@"Violets are %f", view2.sliderValue);
+//        
+//        //Retrieve the slider value
+//        amp = view2.sliderValue;
+//        
+//        NSLog(@"Amplitude %f", amp);
+//        
+//        //amplitude = newInstrument.amp;
+//    }
+//}
 
 @end
 

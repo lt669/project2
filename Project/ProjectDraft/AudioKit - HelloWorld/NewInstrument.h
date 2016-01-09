@@ -2,8 +2,8 @@
 //  NewInstrument.h
 //  ProjectDraft
 //
-//  Created by Lewis Thresh on ?/?/2015.
-//  Copyright (c) 2015 Lewis Thresh. All rights reserved.
+//  Created by Y8185682 on 01/01/2016.
+//  Copyright (c) 2015 Y8185682. All rights reserved.
 //
 
 // This import is required for any class that wishes to use AudioKit. AKFoundation.h holds all of the neccesary files to make AudioKit operate
@@ -17,6 +17,8 @@
 @property (nonatomic, strong) AKMandolin *mandolin;
 @property (nonatomic, strong) AKInstrumentProperty *freq;
 @property (nonatomic, strong) AKInstrumentProperty *amp;
+
+ -(void)getAmplitude;
 
 @end
 

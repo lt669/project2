@@ -2,8 +2,8 @@
 //  ViewController.h
 //  AudioKit - HelloWorld
 //
-//  Created by Sam Beedell on 24/06/2015.
-//  Copyright (c) 2015 Sam Beedell. All rights reserved.
+//  Created by Y8185682 on 01/01/2016.
+//  Copyright (c) 2015 Y8185682. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,7 +14,7 @@
 
 @interface ViewController : UIViewController
 @property (nonatomic) CGPoint coordinates;
-@property (nonatomic) int amplitude;
+@property (nonatomic) float amplitude;
 
 
 

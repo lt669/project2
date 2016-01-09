@@ -2,8 +2,8 @@
 //  ViewController2.h
 //  AudioKit - HelloWorld
 //
-//  Created by lewis thresh on 08/01/2016.
-//  Copyright © 2016 Sam Beedell. All rights reserved.
+//  Created by Y8185682 on 01/01/2016.
+//  Copyright (c) 2015 Y8185682. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
