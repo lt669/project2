@@ -16,6 +16,12 @@
 @property (nonatomic) CGPoint coordinates;
 @property (nonatomic) float amplitude;
 
+//Create properties for swip gesture recognisers
+
+@property (strong, nonatomic) IBOutlet UIImageView *firstString;
+@property (strong, nonatomic) IBOutlet UIImageView *secondString;
+@property (strong, nonatomic) IBOutlet UIImageView *thirdString;
+@property (strong, nonatomic) IBOutlet UIImageView *fourthString;
 
 
 @end
