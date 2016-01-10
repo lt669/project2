@@ -16,8 +16,6 @@
 @property (nonatomic) CGPoint coordinates;
 @property (nonatomic) float amplitude;
 @property (nonatomic) CGPoint strumCood;
-@property (nonatomic) int stringSelector; //Determines which string is being plucked based on coordinates
-//Create properties for swip gesture recognisers
 
 @property (strong, nonatomic) IBOutlet UIImageView *firstString;
 @property (strong, nonatomic) IBOutlet UIImageView *secondString;

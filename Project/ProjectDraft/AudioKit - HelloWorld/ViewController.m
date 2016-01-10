@@ -47,10 +47,10 @@
     IBOutlet UIImageView *secondString;
     IBOutlet UIImageView *thirdString;
     IBOutlet UIImageView *fourthString;
+    
 }
 
-@synthesize amplitude, strumCood, stringSelector;
-
+@synthesize amplitude, strumCood;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -69,9 +69,7 @@
     
     [self.firstStringView addObserver:self  forKeyPath:@"fingerPosition" options:NSKeyValueObservingOptionNew context:Nil];
     
-    //Instatniate strumView Class
-    strumView *strum = [[strumView alloc] init];
-//    stringSelector = strum.fingerPosition;
+  
     
     /***********************SWIPES DON'T WORK***********************/
     //Set up swipe gestures
@@ -116,8 +114,6 @@
     
     // Save the note object to an array
     [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
-    
-    //[strumView touchesMoved];
 }
 
 
@@ -172,16 +168,10 @@
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-//    float middle = self.firstStringView.frame.size.width/2.0;
-//    float height = self.firstStringView.frame.size.height/2.0;
-    
     if ([keyPath isEqualToString:@"fingerPosition"]) { //Using Key-Value Coding
-        
-        int newStringSelector = stringSelector;
-        
+     float stringSelector = [[change objectForKey:@"new"] floatValue]; //Coordinate region detection value from strumView.m
         if (object == self.firstStringView) {
-            NSLog(@"IN SELECTOR");
-            if(newStringSelector == 1){
+            if(stringSelector == 1){
                 NSLog(@"STRING 1");
                 //Receive tag
                 NSInteger tag = 1; //Play Open G
@@ -198,6 +188,7 @@
                 // Save the note object to an array
                 [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
             } else if(stringSelector == 2){
+                NSLog(@"STRING 2");
                 //Receive tag
                 NSInteger tag = 8; //Play Open A
                 
