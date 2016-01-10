@@ -161,6 +161,21 @@
 /***********************Unwind Segue***********************/
 
 
+/***********************playNote Method***********************/
+-(void)playNote:(int)tagNumber{ //Method for playing a specific note
+    //Initialise note object
+    note = [[NewInstrumentNote alloc]init];
+    
+    //Set the frequency to the note
+    note.frequency.value = [[frequencies objectAtIndex:tagNumber] floatValue];
+    
+    // Play the note
+    [newInstrument playNote:note];
+    
+    // Save the note object to an array
+    [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tagNumber]];
+}
+/***********************playNote Method***********************/
 
 /***********************Touch Regions Methods***********************/
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -172,39 +187,13 @@
      float stringSelector = [[change objectForKey:@"new"] floatValue]; //Coordinate region detection value from strumView.m
         if (object == self.firstStringView) {
             if(stringSelector == 1){
-                NSLog(@"STRING 1");
-                //Receive tag
-                NSInteger tag = 1; //Play Open G
-                
-                //Initialise note object
-                note = [[NewInstrumentNote alloc]init];
-                
-                //Set the frequency to the note
-                note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
-                
-                // Play the note
-                [newInstrument playNote:note];
-                
-                // Save the note object to an array
-                [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
+                [self playNote:1];
             } else if(stringSelector == 2){
-                NSLog(@"STRING 2");
-                //Receive tag
-                NSInteger tag = 8; //Play Open A
-                
-                //Initialise note object
-                note = [[NewInstrumentNote alloc]init];
-                
-                //Set the frequency to the note
-                note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
-                
-                // Play the note
-                [newInstrument playNote:note];
-                
-                // Save the note object to an array
-                [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
-                
-                NSLog(@"STRING 2");
+                [self playNote:8];
+            } else if (stringSelector == 3){
+                [self playNote:15];
+            } else if(stringSelector == 4){
+                [self playNote:22];
             }
            
             
@@ -237,33 +226,7 @@
  /***********************Debug Methods***********************/
 
 
-//Add methods for UIGestures
-//
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//        
-//        UITouch *touch = [touches anyObject];
-//        [self.view setUserInteractionEnabled:NO];
-//      //  self.firstPoint = [touch locationInView:self.view];
-//
-//        
-//
-//}
-//
-//
-//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    
-//    
-//    //  [self.swipeTimer invalidate];
-//    
-//    //  NSLog(@"the timer stops at %f seconds", swipeTime);
-//    
-//    UITouch *touch = [touches anyObject];
-//    //self.lastPoint = [touch locationInView:self.view];
-//    
-// //   CGPoint tapVector = rwSub(self.lastPoint, self.firstPoint); // (vector) last point - first point
-//
-//    
-//}
+
 
 
 
