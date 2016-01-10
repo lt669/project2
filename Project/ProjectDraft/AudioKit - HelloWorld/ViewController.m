@@ -144,14 +144,14 @@
         ViewController2 *view2 = (ViewController2 *)unwindSegue.sourceViewController;
         
         //Retrieve the slider value
-        amplitude = view2.sliderValue;
+        //amplitude = view2.sliderValue;
         
-        [newInstrument.amp setValue:amplitude];
-        
-        /*********************TESTING*********************/
-        NSLog(@"view2.sliderValue: %f", view2.sliderValue); //Check they are the same value (DEBUGGING)
-        NSLog(@"Amplitude: %f", amplitude);
-        [newInstrument getAmplitude];
+        [newInstrument.amp setValue:view2.volumeSliderValue]; //Set amplitude with volume slider
+        [newInstrument.detune setValue:view2.detuneSliderValue];
+//        /*********************TESTING*********************/
+//        NSLog(@"view2.sliderValue: %f", view2.volumeSliderValue); //Check they are the same value (DEBUGGING)
+//        NSLog(@"Amplitude: %f", amplitude);
+//        [newInstrument getAmplitude];
         /*********************TESTING*********************/
         
         //        newInstrument.amp = view2.sliderValue;

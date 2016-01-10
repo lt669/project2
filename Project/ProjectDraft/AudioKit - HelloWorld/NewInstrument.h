@@ -17,6 +17,7 @@
 @property (nonatomic, strong) AKMandolin *mandolin;
 @property (nonatomic, strong) AKInstrumentProperty *freq;
 @property (nonatomic, strong) AKInstrumentProperty *amp;
+@property (nonatomic, strong) AKInstrumentProperty *detune;
 
  -(void)getAmplitude;
 

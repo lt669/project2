@@ -15,21 +15,23 @@
 
 
 @end
-
 @implementation ViewController2
 {
     IBOutlet UISlider *volume;
+    IBOutlet UISlider *detuneValue;
 }
-
+@synthesize volumeSliderValue, detuneSliderValue;
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
 - (IBAction)saved:(UIButton *)sender {
-    self.sliderValue = volume.value; //
+    self.volumeSliderValue = volume.value; //
+    self.detuneSliderValue = detuneValue.value;
 }
 
-////seding data from here to ViewController (main page)
+
+////sending data from here to ViewController (main page)
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{
 //    if ([segue.identifier isEqualToString:[@"saved"]){

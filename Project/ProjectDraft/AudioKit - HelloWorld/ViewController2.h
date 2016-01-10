@@ -13,6 +13,7 @@
 #import "AKPropertySlider.h"
 
 @interface ViewController2 : UIViewController
-@property (nonatomic) float sliderValue; //Should this be an int?
+@property (nonatomic) float volumeSliderValue;
+@property (nonatomic) float detuneSliderValue;
 
 @end

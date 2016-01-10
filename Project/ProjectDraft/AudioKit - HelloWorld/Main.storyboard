@@ -7,21 +7,17 @@
         <!--View Controller2-->
         <scene sceneID="Qse-V0-gi9">
             <objects>
-                <viewController id="N6y-6P-isJ" customClass="ViewController2" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="currentContext" id="N6y-6P-isJ" customClass="ViewController2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUS-U5-qjw"/>
                         <viewControllerLayoutGuide type="bottom" id="DUW-kg-qWT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mWa-wg-Dtz">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pEt-nk-Cf7">
-                                <rect key="frame" x="41" y="85" width="118" height="31"/>
-                                <animations/>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-dU-Q6u">
-                                <rect key="frame" x="160" y="170" width="34" height="30"/>
+                                <rect key="frame" x="640" y="102" width="55" height="46"/>
                                 <animations/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -30,15 +26,36 @@
                                     <segue destination="KNB-sQ-7n9" kind="unwind" identifier="saved" unwindAction="myUnwindAction:" id="Lm7-gq-abo"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="avi-Vm-9zl">
+                                <rect key="frame" x="109" y="20" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.0023150858697954524" blue="0.99277949232689267" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <slider key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="pEt-nk-Cf7">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <animations/>
+                                </slider>
+                            </tableView>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-oQ-JLE">
+                                <rect key="frame" x="107" y="77" width="244" height="31"/>
+                                <animations/>
+                            </slider>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dy0-oQ-JLE" firstAttribute="baseline" secondItem="avi-Vm-9zl" secondAttribute="baseline" id="Atm-0I-DFj"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
+                    <value key="contentSizeForViewInPopover" type="size" width="700" height="200"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="400"/>
+                    <size key="freeformSize" width="700" height="200"/>
                     <connections>
+                        <outlet property="detuneValue" destination="dy0-oQ-JLE" id="5HI-jX-IgX"/>
                         <outlet property="volume" destination="pEt-nk-Cf7" id="c7u-nF-NYh"/>
                     </connections>
                 </viewController>
