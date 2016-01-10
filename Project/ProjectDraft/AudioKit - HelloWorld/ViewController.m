@@ -172,7 +172,7 @@
      float stringSelector = [[change objectForKey:@"new"] floatValue]; //Coordinate region detection value from strumView.m
         if (object == self.firstStringView) {
             if(stringSelector == 1){
-                NSLog(@"STRING 1");
+                //*********NSLog(@"STRING 1");
                 //Receive tag
                 NSInteger tag = 1; //Play Open G
                 
@@ -188,7 +188,7 @@
                 // Save the note object to an array
                 [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
             } else if(stringSelector == 2){
-                NSLog(@"STRING 2");
+                //*********NSLog(@"STRING 2");
                 //Receive tag
                 NSInteger tag = 8; //Play Open A
                 
