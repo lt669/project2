@@ -21,11 +21,9 @@
     IBOutlet UISlider *volume;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-
 
 - (IBAction)saved:(UIButton *)sender {
     self.sliderValue = volume.value; //

@@ -12,6 +12,9 @@
 //  ------------------------------------------------------------------------
 
 #import "ViewController.h"
+#import "strumView.h"
+
+#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 @interface ViewController()
 //@property (nonatomic) CGPoint coordinates;
@@ -19,9 +22,11 @@
 //Declare Swiping methods (NOT USED)
 -(void)slideDownFirstStringWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer;
 -(void)slideUpFirstStringWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer;
+-(void)touchCoodrinates;
 
 
 @property (strong, nonatomic) IBOutlet UIView *firstStringView;
+@property (strong, nonatomic) IBOutlet UIView *secondStringView;
 
 @end
 
@@ -34,6 +39,9 @@
     NSArray *frequencies;
     NSMutableDictionary *currentNotes;
     
+    //CGPoint for tracking finger movement
+    //CGPoint *strumCood;
+    
     //Create outlets for swip gesture recognisers (THESE ARE NOT USED BECAUSE UIIMAGEVIEW IS SHIT)
     IBOutlet UIImageView *firstString;
     IBOutlet UIImageView *secondString;
@@ -41,7 +49,7 @@
     IBOutlet UIImageView *fourthString;
 }
 
-@synthesize amplitude;
+@synthesize amplitude, strumCood, stringSelector;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,18 +62,16 @@
     currentNotes = [NSMutableDictionary dictionary];
     
     //Allocate memory for the AKInstrument subclass and run its 'init' method.
-    newInstrument = [[NewInstrument alloc] init];
+    newInstrument = [[NewInstrument alloc] init];    
     
     //Add the declared AudioKit instrument(s) to the AKOrchestra
     [AKOrchestra addInstrument:newInstrument];
     
-    //Connect the UISliders to the AKInstrumentProperty objects
-    //amplitude = newInstrument.amp;
+    [self.firstStringView addObserver:self  forKeyPath:@"fingerPosition" options:NSKeyValueObservingOptionNew context:Nil];
     
-    
-    [self.firstStringView addObserver:self  forKeyPath:@"horizontalPercentage" options:NSKeyValueObservingOptionNew context:Nil];
-    
-
+    //Instatniate strumView Class
+    strumView *strum = [[strumView alloc] init];
+//    stringSelector = strum.fingerPosition;
     
     /***********************SWIPES DON'T WORK***********************/
     //Set up swipe gestures
@@ -83,6 +89,18 @@
     /***********************SWIPES DON'T WORK***********************/
 }
 
+
+
+- (void)touchCoodrinates:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"HELLOOOO");
+    UITouch *touch = [touches anyObject];
+    CGPoint pointToMove = [touch locationInView:self.view];
+    
+    
+    NSLog(@"X: %f Y: %f",pointToMove.x, pointToMove.y);
+}
+
+
 - (IBAction)keyPressed:(id)sender {
     //Receive tag
     NSInteger tag = [(UIButton *)sender tag];
@@ -98,6 +116,8 @@
     
     // Save the note object to an array
     [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
+    
+    //[strumView touchesMoved];
 }
 
 
@@ -152,28 +172,50 @@
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-    float middle = self.view.frame.size.width/2.0;
-    float height = self.view.frame.size.height;
+//    float middle = self.firstStringView.frame.size.width/2.0;
+//    float height = self.firstStringView.frame.size.height/2.0;
     
-    if ([keyPath isEqualToString:@"horizontalPercentage"]) {
-        float newValue = [[change objectForKey:@"new"] floatValue];
+    if ([keyPath isEqualToString:@"fingerPosition"]) { //Using Key-Value Coding
+        
+        int newStringSelector = stringSelector;
+        
         if (object == self.firstStringView) {
-            
-            
-            //Receive tag
-            NSInteger tag = 1;
-            
-            //Initialise note object
-            note = [[NewInstrumentNote alloc]init];
-            
-            //Set the frequency to the note
-            note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
-            
-            // Play the note
-            [newInstrument playNote:note];
-            
-            // Save the note object to an array
-            [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
+            NSLog(@"IN SELECTOR");
+            if(newStringSelector == 1){
+                NSLog(@"STRING 1");
+                //Receive tag
+                NSInteger tag = 1; //Play Open G
+                
+                //Initialise note object
+                note = [[NewInstrumentNote alloc]init];
+                
+                //Set the frequency to the note
+                note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
+                
+                // Play the note
+                [newInstrument playNote:note];
+                
+                // Save the note object to an array
+                [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
+            } else if(stringSelector == 2){
+                //Receive tag
+                NSInteger tag = 8; //Play Open A
+                
+                //Initialise note object
+                note = [[NewInstrumentNote alloc]init];
+                
+                //Set the frequency to the note
+                note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
+                
+                // Play the note
+                [newInstrument playNote:note];
+                
+                // Save the note object to an array
+                [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
+                
+                NSLog(@"STRING 2");
+            }
+           
             
             
            // leftTouchImageView.center = CGPointMake(newValue * middle, leftTouchImageView.center.y);

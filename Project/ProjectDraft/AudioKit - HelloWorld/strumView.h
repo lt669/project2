@@ -10,7 +10,9 @@
 
 @interface strumView : UIView
 
-@property float horizontalPercentage;
-@property float verticalPercentage;
+//@property float horizontalPercentage;
+//@property float verticalPercentage;
+
+@property int fingerPosition;
 
 @end
