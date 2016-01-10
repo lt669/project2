@@ -2,13 +2,10 @@
 //  strumView.m
 //  AudioKit - HelloWorld
 //
-//  Created by lewis thresh on 09/01/2016.
-//  Copyright © 2016 Sam Beedell. All rights reserved.
+//  Created by Y8185682 on 09/01/2016.
+//  Copyright © 2016 Y8185682. All rights reserved.
 //
-//
-//
-//  Created by Aurelius Prochazka on 8/6/14.
-//  Copyright (c) 2014 Aurelius Prochazka. All rights reserved.
+//  Adapted from AudioKit Example "TouchRegions" written by  Aurelius Prochazka
 //
 
 #import "strumView.h"
@@ -18,20 +15,17 @@
 }
 @end
 
-
 @implementation strumView
 @synthesize fingerPosition;
 int stringOneCounter, stringTwoCounter, stringThreeCounter, stringFourCounter;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"TouchesBegan!");
-    NSArray *touchSet = [[event allTouches] allObjects];
+    NSArray *touchSet = [[event allTouches] allObjects]; //Create array to store x and y values
     for (UITouch *touch in touchSet) {
         if ((!firstTouch) || (touch == firstTouch)) {
-            CGPoint touchPoint = [touch locationInView:self];
-            [self setFingerPositionWithTouchPoint:touchPoint];
-         //   NSLog(@"X: %f Y: %f",touchPoint.x , touchPoint.y);
+            CGPoint touchPoint = [touch locationInView:self]; //Retrive touch coordinates
+            [self setFingerPositionWithTouchPoint:touchPoint]; //Send coordinates to method
         }
     }
     
@@ -59,46 +53,42 @@ int stringOneCounter, stringTwoCounter, stringThreeCounter, stringFourCounter;
     }
 }
 
-- (int)setFingerPositionWithTouchPoint:(CGPoint) touchPoint
+- (void)setFingerPositionWithTouchPoint:(CGPoint) touchPoint //Method to detect which are of the view has been touched
 {
-    self.fingerPosition = 0; //Set to 0 to prevent reactivation of string
-    NSLog(@"stringOneCounter: %i",stringOneCounter);
     if (touchPoint.x > 0 && touchPoint.x < self.bounds.size.width &&
-        touchPoint.y > 260 && touchPoint.y < 280)
+        touchPoint.y > 260 && touchPoint.y < 280) //Coordinates for first strings
     {
         if (stringOneCounter == 0) { //Second if statement prevents string from activating again once inside the coordinate space
-        stringOneCounter++;
-        self.fingerPosition = 1;
+        stringOneCounter++; //Increment counter
+        self.fingerPosition = 1; //Arbitray value used to notify viewController which string has been struck
         }
     } else if(touchPoint.x > 0 && touchPoint.x < self.bounds.size.width &&
-              touchPoint.y > 329 && touchPoint.y < 355){
+              touchPoint.y > 329 && touchPoint.y < 355){ //Coordinates for second strings
         if(stringTwoCounter ==0){
         stringTwoCounter++;
         self.fingerPosition = 2;
         }
       
     } else if(touchPoint.x > 0 && touchPoint.x < self.bounds.size.width &&
-               touchPoint.y > 404 && touchPoint.y < 424){
+               touchPoint.y > 404 && touchPoint.y < 424){ //Coordinates for third strings
         if(stringThreeCounter ==0){
             stringThreeCounter++;
             self.fingerPosition = 3;
         }
         
     } else if(touchPoint.x > 0 && touchPoint.x < self.bounds.size.width &&
-               touchPoint.y > 476 && touchPoint.y < 496){
+               touchPoint.y > 476 && touchPoint.y < 496){ //Coordinates for fourth strings
         if(stringFourCounter ==0){
             stringFourCounter++;
             self.fingerPosition = 4;
         }
         
-    } else {
+    } else { //Once each string region has been left, the counters are reset to re-enable the use of that string
         stringOneCounter = 0;
         stringTwoCounter = 0;
         stringThreeCounter = 0;
         stringFourCounter = 0;
     }
-    
-    return fingerPosition;
 }
 
 

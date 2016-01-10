@@ -195,11 +195,6 @@
             } else if(stringSelector == 4){
                 [self playNote:22];
             }
-           
-            
-            
-           // leftTouchImageView.center = CGPointMake(newValue * middle, leftTouchImageView.center.y);
-            //NSLog(@"%f", newValue*400);
         }
     } else {
         [NSException raise:@"Unexpected Keypath" format:@"%@", keyPath];

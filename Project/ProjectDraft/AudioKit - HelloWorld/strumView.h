@@ -15,6 +15,4 @@
 
 @property int fingerPosition;
 
-- (int)setFingerPositionWithTouchPoint; //Declaration for method
-
 @end
