@@ -160,6 +160,8 @@
 }
 /***********************Unwind Segue***********************/
 
+
+/***********************playNote Method***********************/
 -(void)playNote:(int)tagNumber{ //Method for playing a specific note
     //Initialise note object
     note = [[NewInstrumentNote alloc]init];
@@ -173,6 +175,7 @@
     // Save the note object to an array
     [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tagNumber]];
 }
+/***********************playNote Method***********************/
 
 /***********************Touch Regions Methods***********************/
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -187,6 +190,10 @@
                 [self playNote:1];
             } else if(stringSelector == 2){
                 [self playNote:8];
+            } else if (stringSelector == 3){
+                [self playNote:15];
+            } else if(stringSelector == 4){
+                [self playNote:22];
             }
            
             
@@ -219,33 +226,7 @@
  /***********************Debug Methods***********************/
 
 
-//Add methods for UIGestures
-//
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//        
-//        UITouch *touch = [touches anyObject];
-//        [self.view setUserInteractionEnabled:NO];
-//      //  self.firstPoint = [touch locationInView:self.view];
-//
-//        
-//
-//}
-//
-//
-//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    
-//    
-//    //  [self.swipeTimer invalidate];
-//    
-//    //  NSLog(@"the timer stops at %f seconds", swipeTime);
-//    
-//    UITouch *touch = [touches anyObject];
-//    //self.lastPoint = [touch locationInView:self.view];
-//    
-// //   CGPoint tapVector = rwSub(self.lastPoint, self.firstPoint); // (vector) last point - first point
-//
-//    
-//}
+
 
 
 
