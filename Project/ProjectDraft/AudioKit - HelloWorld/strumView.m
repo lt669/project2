@@ -29,7 +29,7 @@
     for (UITouch *touch in touchSet) {
         if ((!firstTouch) || (touch == firstTouch)) {
             CGPoint touchPoint = [touch locationInView:self];
-            [self setPercentagesWithTouchPoint:touchPoint];
+            [self setFingerPositionWithTouchPoint:touchPoint];
          //   NSLog(@"X: %f Y: %f",touchPoint.x , touchPoint.y);
         }
     }
@@ -41,7 +41,7 @@
     for (UITouch *touch in touchSet) {
         if ((!firstTouch) || (touch == firstTouch)) {
             CGPoint touchPoint = [touch locationInView:self];
-            [self setPercentagesWithTouchPoint:touchPoint];
+            [self setFingerPositionWithTouchPoint:touchPoint];
         }
     }
 }
@@ -52,20 +52,19 @@
     for (UITouch *touch in touchSet) {
         if ((!firstTouch) || (touch == firstTouch)) {
             CGPoint touchPoint = [touch locationInView:self];
-            [self setPercentagesWithTouchPoint:touchPoint];
+            [self setFingerPositionWithTouchPoint:touchPoint];
             firstTouch=nil;
         }
     }
 }
 
-- (void)setPercentagesWithTouchPoint:(CGPoint) touchPoint
+- (int)setFingerPositionWithTouchPoint:(CGPoint) touchPoint
 {
+    NSLog(@"Setting selffingerPosition = %i", self.fingerPosition);
+    fingerPosition = 1;
     if (touchPoint.x > 0 && touchPoint.x < self.bounds.size.width &&
         touchPoint.y > 260 && touchPoint.y < 280)
     {
-//        self.horizontalPercentage = touchPoint.x/self.bounds.size.width; //Need these to active other method?
-//        self.verticalPercentage = touchPoint.y/self.bounds.size.height;
-        
         self.fingerPosition = 1;
         NSLog(@"WITHIN FIRST STRING");
 
@@ -73,8 +72,9 @@
               touchPoint.y > 329 && touchPoint.y < 355){
         self.fingerPosition = 2;
         NSLog(@"WITHIN SECOND STRING");
-        
     }
+    
+    return fingerPosition;
 }
 
 
