@@ -160,7 +160,19 @@
 }
 /***********************Unwind Segue***********************/
 
-
+-(void)playNote:(int)tagNumber{ //Method for playing a specific note
+    //Initialise note object
+    note = [[NewInstrumentNote alloc]init];
+    
+    //Set the frequency to the note
+    note.frequency.value = [[frequencies objectAtIndex:tagNumber] floatValue];
+    
+    // Play the note
+    [newInstrument playNote:note];
+    
+    // Save the note object to an array
+    [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tagNumber]];
+}
 
 /***********************Touch Regions Methods***********************/
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -172,39 +184,9 @@
      float stringSelector = [[change objectForKey:@"new"] floatValue]; //Coordinate region detection value from strumView.m
         if (object == self.firstStringView) {
             if(stringSelector == 1){
-                //*********NSLog(@"STRING 1");
-                //Receive tag
-                NSInteger tag = 1; //Play Open G
-                
-                //Initialise note object
-                note = [[NewInstrumentNote alloc]init];
-                
-                //Set the frequency to the note
-                note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
-                
-                // Play the note
-                [newInstrument playNote:note];
-                
-                // Save the note object to an array
-                [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
+                [self playNote:1];
             } else if(stringSelector == 2){
-                //*********NSLog(@"STRING 2");
-                //Receive tag
-                NSInteger tag = 8; //Play Open A
-                
-                //Initialise note object
-                note = [[NewInstrumentNote alloc]init];
-                
-                //Set the frequency to the note
-                note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
-                
-                // Play the note
-                [newInstrument playNote:note];
-                
-                // Save the note object to an array
-                [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
-                
-                NSLog(@"STRING 2");
+                [self playNote:8];
             }
            
             
