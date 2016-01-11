@@ -187,7 +187,7 @@
             }
         } else if (tapModeValue == false){ //If tapMode is off strum note according to fret position
             if (object == self.firstStringView) {
-             //   NSInteger tag = [(UIButton *)sender tag]; //Receive tag
+             //Project   NSInteger tag = [(UIButton *)sender tag]; //Receive tag
                 if(stringSelector == 1){ //If finger is in the firstString area
                     [self playNote:1];
                 } else if(stringSelector == 2){

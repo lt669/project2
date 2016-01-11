@@ -33,6 +33,8 @@
     volume.value = 0.5;
     detuneValue.value = 0.5;
     bodySize.value = 0.5;
+    [tapModeSwitch setOn:YES animated:YES];
+    
     amplitudeLabel.text = [NSString stringWithFormat:@"50%%"];
     detuneLabel.text = [NSString stringWithFormat:@"50%%"];
     bodySizeLabel.text = [NSString stringWithFormat:@"50%%"];
@@ -43,6 +45,7 @@
     amplitudeLabel.text = [NSString stringWithFormat:@"50%%"];
     detuneLabel.text = [NSString stringWithFormat:@"50%%"];
     bodySizeLabel.text = [NSString stringWithFormat:@"50%%"];
+    [tapModeSwitch setOn:YES animated:YES];
 }
                         
 - (IBAction)volumeChanged:(UISlider *)sender { //Set label values
@@ -66,6 +69,16 @@
     self.volumeSliderValue = volume.value; //
     self.detuneSliderValue = detuneValue.value;
     self.bodySizeSliderValue = bodySize.value;
+    
+    if ([tapModeSwitch isOn]) {
+            // NSLog(@"ON");
+            self.tapMode = TRUE;
+    } else {
+            // NSLog(@"OFF");
+            self.tapMode = false;
+        
+        volume.value = volume.value;
+    }
 }
 
 
