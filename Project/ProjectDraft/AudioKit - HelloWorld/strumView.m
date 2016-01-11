@@ -83,7 +83,7 @@ int stringOneCounter, stringTwoCounter, stringThreeCounter, stringFourCounter;
             self.fingerPosition = 4;
         }
         
-    } else { //Once each string region has been left, the counters are reset to re-enable the use of that string
+    } else if(touchPoint.x < self.bounds.size.width){ //Once each string region has been left, the counters are reset to re-enable the use of that string
         stringOneCounter = 0;
         stringTwoCounter = 0;
         stringThreeCounter = 0;
