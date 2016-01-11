@@ -14,7 +14,6 @@
 #import "ViewController.h"
 #import "strumView.h"
 
-#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 @interface ViewController()
 //@property (nonatomic) CGPoint coordinates;
@@ -148,6 +147,10 @@
         
         [newInstrument.amp setValue:view2.volumeSliderValue]; //Set amplitude with volume slider
         [newInstrument.detune setValue:view2.detuneSliderValue];
+        [newInstrument.bodySize setValue:view2.bodySizeSliderValue];
+        
+        
+        
 //        /*********************TESTING*********************/
 //        NSLog(@"view2.sliderValue: %f", view2.volumeSliderValue); //Check they are the same value (DEBUGGING)
 //        NSLog(@"Amplitude: %f", amplitude);

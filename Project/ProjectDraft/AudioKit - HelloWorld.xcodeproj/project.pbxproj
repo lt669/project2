@@ -197,6 +197,7 @@
 		6054CD051B3ADCEC008D2E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6054CD041B3ADCEC008D2E50 /* Main.storyboard */; };
 		F6777D8D1C3FF8590036CB29 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777D8C1C3FF8590036CB29 /* ViewController2.m */; settings = {ASSET_TAGS = (); }; };
 		F6777DDE1C41CA1B0036CB29 /* strumView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777DDD1C41CA1B0036CB29 /* strumView.m */; settings = {ASSET_TAGS = (); }; };
+		F6777DE71C4330B40036CB29 /* EffectsProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777DE61C4330B40036CB29 /* EffectsProcessor.m */; settings = {ASSET_TAGS = (); }; };
 		F6E2D9021C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90A1C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90F1C3CA062008DEE1C /* Strings_V2.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */; settings = {ASSET_TAGS = (); }; };
@@ -613,6 +614,8 @@
 		F6777D8E1C3FF8880036CB29 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		F6777DDD1C41CA1B0036CB29 /* strumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = strumView.m; sourceTree = "<group>"; };
 		F6777DDF1C41CA230036CB29 /* strumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strumView.h; sourceTree = "<group>"; };
+		F6777DE51C4330B40036CB29 /* EffectsProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectsProcessor.h; sourceTree = "<group>"; };
+		F6777DE61C4330B40036CB29 /* EffectsProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectsProcessor.m; sourceTree = "<group>"; };
 		F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Light-Wood-Background-Wallpaper.jpg"; sourceTree = "<group>"; };
 		F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regal_Blue_Comet_mandolin_fretboardV3.png; sourceTree = "<group>"; };
 		F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Strings_V2.1.png; sourceTree = "<group>"; };
@@ -680,6 +683,8 @@
 		6054CA781B3ACB41008D2E50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6777DE51C4330B40036CB29 /* EffectsProcessor.h */,
+				F6777DE61C4330B40036CB29 /* EffectsProcessor.m */,
 				F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */,
 				F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */,
 				F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */,
@@ -1675,6 +1680,7 @@
 				6054CCC01B3ACBCF008D2E50 /* AKPanner.m in Sources */,
 				6054CC771B3ACBCF008D2E50 /* AKTableLooper.m in Sources */,
 				6054CC851B3ACBCF008D2E50 /* AKCabasa.m in Sources */,
+				F6777DE71C4330B40036CB29 /* EffectsProcessor.m in Sources */,
 				6054CC931B3ACBCF008D2E50 /* AKInterpolatedRandomNumberPulse.m in Sources */,
 				6054CC661B3ACBCF008D2E50 /* AKInverse.m in Sources */,
 				6054CCCE1B3ACBCF008D2E50 /* AKSoundFileTable.m in Sources */,

@@ -18,8 +18,17 @@
 @property (nonatomic, strong) AKInstrumentProperty *freq;
 @property (nonatomic, strong) AKInstrumentProperty *amp;
 @property (nonatomic, strong) AKInstrumentProperty *detune;
+@property (nonatomic, strong) AKInstrumentProperty *bodySize;
+
+//
+//@property (nonatomic, strong) AKFlanger *flanger;
+//@property (nonatomic) AKParameter *feedback;
+//@property (readonly) AKAudio *auxilliaryOutput;
 
  -(void)getAmplitude;
+- (instancetype)initWithAudioSource:(AKStereoAudio *)audioSource;
+
+- (void)setReverbFeedbackLevel:(float)feedbackLevel; //Reverb feedback
 
 @end
 

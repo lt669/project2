@@ -15,5 +15,8 @@
 @interface ViewController2 : UIViewController
 @property (nonatomic) float volumeSliderValue;
 @property (nonatomic) float detuneSliderValue;
+@property (nonatomic) float bodySizeSliderValue;
+
+
 
 @end

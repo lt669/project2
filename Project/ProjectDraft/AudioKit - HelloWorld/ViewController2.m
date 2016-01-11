@@ -19,15 +19,41 @@
 {
     IBOutlet UISlider *volume;
     IBOutlet UISlider *detuneValue;
+    IBOutlet UISlider *bodySize;
+    
+    IBOutlet UILabel *amplitudeLabel;
+    IBOutlet UILabel *detuneLabel;
+    IBOutlet UILabel *bodySizeLabel;
 }
-@synthesize volumeSliderValue, detuneSliderValue;
+@synthesize volumeSliderValue, detuneSliderValue, bodySizeSliderValue;
+
+- (IBAction)defaultSettings:(id)sender {
+    volume.value = 0.5;
+    detuneValue.value = 0.5;
+    bodySize.value = 0.5;
+    amplitudeLabel.text = [NSString stringWithFormat:@"50%%"];
+    detuneLabel.text = [NSString stringWithFormat:@"50%%"];
+    bodySizeLabel.text = [NSString stringWithFormat:@"50%%"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    amplitudeLabel.text = [NSString stringWithFormat:@"50%%"];
+    detuneLabel.text = [NSString stringWithFormat:@"50%%"];
+    bodySizeLabel.text = [NSString stringWithFormat:@"50%%"];
+}
+                        
+- (IBAction)volumeChanged:(UISlider *)sender { //Set label values
+    
+    amplitudeLabel.text = [NSString stringWithFormat:@"%0.0f%%",(volume.value*100)]; //In Percentage
+    detuneLabel.text = [NSString stringWithFormat:@"%0.0f%%",(detuneValue.value*100)];
+    bodySizeLabel.text = [NSString stringWithFormat:@"%0.0f%%",(bodySize.value*100)];
 }
 
 - (IBAction)saved:(UIButton *)sender {
     self.volumeSliderValue = volume.value; //
     self.detuneSliderValue = detuneValue.value;
+    self.bodySizeSliderValue = bodySize.value;
 }
 
 

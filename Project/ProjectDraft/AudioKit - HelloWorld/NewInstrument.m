@@ -9,12 +9,15 @@
 
 #import "NewInstrument.h"
 #import "ViewController2.h"
+#import "EffectsProcessor.h"
 
 @implementation NewInstrument
+{
+    EffectsProcessor *fx;
+}
 
-// Produces setter and getter function for controlling properties 
-//@synthesize osc;
-@synthesize mandolin, amp, detune;
+
+@synthesize mandolin, amp, detune, bodySize;
 - (instancetype)init
 {
     // Firstly, we must call the intialisation code for the inherited class (AKInstrument)
@@ -32,21 +35,44 @@
         //Send parameter to mandolin
          mandolin.bodySize = akp(0.5);
          mandolin.frequency = note.frequency;
+      //   mandolin.flanger = akp(0.5);
 
          //mandolin.amplitude = akp(0.5); This is now controlled elsewhere
         
         
         amp  = [self createPropertyWithValue:0.5 minimum:0  maximum:1];
-        detune  = [self createPropertyWithValue:0.5 minimum:0  maximum:1];
+        detune  = [self createPropertyWithValue:0.5 minimum:0.01  maximum:1];
+        bodySize  = [self createPropertyWithValue:0.5 minimum:0  maximum:0.9];
         
         mandolin.amplitude = amp;
         mandolin.pairedStringDetuning = detune;
+        mandolin.bodySize = bodySize;
         
+        
+       // _auxilliaryOutput = [AKAudio globalParameter];
+       // [self assignOutput:_auxilliaryOutput to:mandolin];
+        
+       // fx = [[EffectsProcessor alloc] initWithAudioSource:mandolin.auxilliaryOutput];
+        [AKOrchestra addInstrument:fx];
+        
+        
+        
+        [fx play];
+
         // Output source of the instrument
         [self setAudioOutput:mandolin];
 
     }
     return self;
+}
+
+//- (instancetype)initWithAudioSource:(AKStereoAudio *)audioSource{
+//    
+//}
+
+- (void)setReverbFeedbackLevel:(float)feedbackLevel
+{
+    fx.reverb.value = 0.5; /*feedbackLevel;*/
 }
 
 -(void)getAmplitude{
