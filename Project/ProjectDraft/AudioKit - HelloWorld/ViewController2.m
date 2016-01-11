@@ -24,6 +24,8 @@
     IBOutlet UILabel *amplitudeLabel;
     IBOutlet UILabel *detuneLabel;
     IBOutlet UILabel *bodySizeLabel;
+    
+    IBOutlet UISwitch *tapModeSwitch;
 }
 @synthesize volumeSliderValue, detuneSliderValue, bodySizeSliderValue;
 
@@ -48,6 +50,16 @@
     amplitudeLabel.text = [NSString stringWithFormat:@"%0.0f%%",(volume.value*100)]; //In Percentage
     detuneLabel.text = [NSString stringWithFormat:@"%0.0f%%",(detuneValue.value*100)];
     bodySizeLabel.text = [NSString stringWithFormat:@"%0.0f%%",(bodySize.value*100)];
+}
+- (IBAction)tapMode:(UISwitch *)sender {
+//    self.tapMode = tapModeSwitch.state;
+    if ([tapModeSwitch isOn]) {
+       // NSLog(@"ON");
+        self.tapMode = TRUE;
+    } else {
+       // NSLog(@"OFF");
+        self.tapMode = false;
+    }
 }
 
 - (IBAction)saved:(UIButton *)sender {

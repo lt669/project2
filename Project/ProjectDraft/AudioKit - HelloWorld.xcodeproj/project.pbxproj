@@ -198,6 +198,8 @@
 		F6777D8D1C3FF8590036CB29 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777D8C1C3FF8590036CB29 /* ViewController2.m */; settings = {ASSET_TAGS = (); }; };
 		F6777DDE1C41CA1B0036CB29 /* strumView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777DDD1C41CA1B0036CB29 /* strumView.m */; settings = {ASSET_TAGS = (); }; };
 		F6777DE71C4330B40036CB29 /* EffectsProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777DE61C4330B40036CB29 /* EffectsProcessor.m */; settings = {ASSET_TAGS = (); }; };
+		F6777DE91C43523A0036CB29 /* Mandolin copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F6777DE81C43523A0036CB29 /* Mandolin copy.png */; settings = {ASSET_TAGS = (); }; };
+		F6777DEB1C4352E80036CB29 /* Mandolin copy 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6777DEA1C4352E80036CB29 /* Mandolin copy 2.png */; settings = {ASSET_TAGS = (); }; };
 		F6E2D9021C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90A1C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90F1C3CA062008DEE1C /* Strings_V2.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */; settings = {ASSET_TAGS = (); }; };
@@ -616,6 +618,8 @@
 		F6777DDF1C41CA230036CB29 /* strumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strumView.h; sourceTree = "<group>"; };
 		F6777DE51C4330B40036CB29 /* EffectsProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectsProcessor.h; sourceTree = "<group>"; };
 		F6777DE61C4330B40036CB29 /* EffectsProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectsProcessor.m; sourceTree = "<group>"; };
+		F6777DE81C43523A0036CB29 /* Mandolin copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mandolin copy.png"; sourceTree = "<group>"; };
+		F6777DEA1C4352E80036CB29 /* Mandolin copy 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mandolin copy 2.png"; sourceTree = "<group>"; };
 		F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Light-Wood-Background-Wallpaper.jpg"; sourceTree = "<group>"; };
 		F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regal_Blue_Comet_mandolin_fretboardV3.png; sourceTree = "<group>"; };
 		F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Strings_V2.1.png; sourceTree = "<group>"; };
@@ -683,6 +687,8 @@
 		6054CA781B3ACB41008D2E50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6777DEA1C4352E80036CB29 /* Mandolin copy 2.png */,
+				F6777DE81C43523A0036CB29 /* Mandolin copy.png */,
 				F6777DE51C4330B40036CB29 /* EffectsProcessor.h */,
 				F6777DE61C4330B40036CB29 /* EffectsProcessor.m */,
 				F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */,
@@ -1593,10 +1599,12 @@
 				6054CCCA1B3ACBCF008D2E50 /* LICENSE.TXT in Resources */,
 				6054CCFA1B3ACBCF008D2E50 /* dish.wav in Resources */,
 				6054CCF91B3ACBCF008D2E50 /* 808loop.wav in Resources */,
+				F6777DEB1C4352E80036CB29 /* Mandolin copy 2.png in Resources */,
 				6054CCFE1B3ACBCF008D2E50 /* Stairwell.wav in Resources */,
 				F6E2D90F1C3CA062008DEE1C /* Strings_V2.1.png in Resources */,
 				6054CC501B3ACBCF008D2E50 /* AudioKit.plist in Resources */,
 				6054CCFC1B3ACBCF008D2E50 /* marmstk1.wav in Resources */,
+				F6777DE91C43523A0036CB29 /* Mandolin copy.png in Resources */,
 				F6E2D9021C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg in Resources */,
 				6054CA861B3ACB41008D2E50 /* Images.xcassets in Resources */,
 				F6E2D9101C3CA062008DEE1C /* Strings_V2.2.png in Resources */,

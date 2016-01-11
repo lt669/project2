@@ -49,7 +49,7 @@
     
 }
 
-@synthesize amplitude, strumCood;
+@synthesize amplitude, strumCood, tapModeValue;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -99,20 +99,12 @@
 
 
 - (IBAction)keyPressed:(id)sender {
-    //Receive tag
-    NSInteger tag = [(UIButton *)sender tag];
-    
-    //Initialise note object
-    note = [[NewInstrumentNote alloc]init];
-    
-    //Set the frequency to the note
-    note.frequency.value = [[frequencies objectAtIndex:tag] floatValue];
-    
-    // Play the note
-    [newInstrument playNote:note];
-    
-    // Save the note object to an array
-    [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tag]];
+    if(tapModeValue == TRUE){ //Play when frets are tapped
+    NSInteger tag = [(UIButton *)sender tag]; //Receive tag
+    [self playNote:tag]; //Play appropriate note
+    } else{
+        
+    }
 }
 
 
@@ -134,31 +126,24 @@
 
 /***********************Unwind Segue***********************/
 - (IBAction)myUnwindAction:(UIStoryboardSegue*)unwindSegue{
-    //Set volume here
-    //ViewController2 *view = [segue sourceViewController];
     
-    NSLog(@"Unwindedededed"); // (DEBUGGING)
-    
-    if ([unwindSegue.identifier isEqualToString:@"saved"]) { //Check that the correct segue has occured
+    //Check that the correct segue has occured
+    if ([unwindSegue.identifier isEqualToString:@"saved"]) {
         ViewController2 *view2 = (ViewController2 *)unwindSegue.sourceViewController;
-        
-        //Retrieve the slider value
-        //amplitude = view2.sliderValue;
-        
-        [newInstrument.amp setValue:view2.volumeSliderValue]; //Set amplitude with volume slider
-        [newInstrument.detune setValue:view2.detuneSliderValue];
-        [newInstrument.bodySize setValue:view2.bodySizeSliderValue];
-        
-        
+
+    //Set parameters with sliders from ViewController2 (options screen)
+    [newInstrument.amp setValue:view2.volumeSliderValue];
+    [newInstrument.detune setValue:view2.detuneSliderValue];
+    [newInstrument.bodySize setValue:view2.bodySizeSliderValue];
+
+    tapModeValue = view2.tapMode;
+    NSLog(tapModeValue ? @"True" : @"False");
         
 //        /*********************TESTING*********************/
 //        NSLog(@"view2.sliderValue: %f", view2.volumeSliderValue); //Check they are the same value (DEBUGGING)
 //        NSLog(@"Amplitude: %f", amplitude);
 //        [newInstrument getAmplitude];
         /*********************TESTING*********************/
-        
-        //        newInstrument.amp = view2.sliderValue;
-        //amplitude = newInstrument.amp;
     }
 }
 /***********************Unwind Segue***********************/
@@ -188,15 +173,30 @@
 {
     if ([keyPath isEqualToString:@"fingerPosition"]) { //Using Key-Value Coding
      float stringSelector = [[change objectForKey:@"new"] floatValue]; //Coordinate region detection value from strumView.m
-        if (object == self.firstStringView) {
-            if(stringSelector == 1){
-                [self playNote:1];
-            } else if(stringSelector == 2){
-                [self playNote:8];
-            } else if (stringSelector == 3){
-                [self playNote:15];
-            } else if(stringSelector == 4){
-                [self playNote:22];
+        if (tapModeValue == true) { //Is tapMode is on play strum open notes only
+            if (object == self.firstStringView) {
+                if(stringSelector == 1){ //If finger is in the firstString area
+                    [self playNote:1];
+                } else if(stringSelector == 2){
+                    [self playNote:8];
+                } else if (stringSelector == 3){
+                    [self playNote:15];
+                } else if(stringSelector == 4){
+                    [self playNote:22];
+                }
+            }
+        } else if (tapModeValue == false){ //If tapMode is off strum note according to fret position
+            if (object == self.firstStringView) {
+             //   NSInteger tag = [(UIButton *)sender tag]; //Receive tag
+                if(stringSelector == 1){ //If finger is in the firstString area
+                    [self playNote:1];
+                } else if(stringSelector == 2){
+                    [self playNote:8];
+                } else if (stringSelector == 3){
+                    [self playNote:15];
+                } else if(stringSelector == 4){
+                    [self playNote:22];
+                }
             }
         }
     } else {

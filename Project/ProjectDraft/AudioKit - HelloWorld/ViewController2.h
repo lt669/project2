@@ -17,6 +17,8 @@
 @property (nonatomic) float detuneSliderValue;
 @property (nonatomic) float bodySizeSliderValue;
 
+@property (nonatomic) bool tapMode;
+
 
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic) CGPoint coordinates;
 @property (nonatomic) float amplitude;
 @property (nonatomic) CGPoint strumCood;
+@property (nonatomic) bool tapModeValue;
 
 @property (strong, nonatomic) IBOutlet UIImageView *firstString;
 @property (strong, nonatomic) IBOutlet UIImageView *secondString;
