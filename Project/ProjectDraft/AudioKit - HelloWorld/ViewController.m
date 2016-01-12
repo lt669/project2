@@ -127,8 +127,8 @@
         noteToRelease = [[NewInstrumentNote alloc]init];
     
         // Stop the note
-//        [newInstrument stopNote:noteToRelease];
-                [newInstrument stopNote:noteToRelease];
+
+        [newInstrument stopNote:[currentNotes objectForKey:[NSNumber numberWithInt:(int)tag]]];
     // Remove the note from the array
      [currentNotes removeObjectForKey:[NSNumber numberWithInt:(int)tag]];
 //

@@ -110,7 +110,7 @@
         
         frequency = [self createPropertyWithValue:440 minimum:20 maximum:20000];
         
-        self.duration.value = 2; // Useful for testing polyphony in the simulator - not required if a keyReleased method is used
+       // self.duration.value = 2; // Useful for testing polyphony in the simulator - not required if a keyReleased method is used
         
     }
     return self;
