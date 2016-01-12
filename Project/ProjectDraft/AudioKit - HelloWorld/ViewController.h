@@ -18,10 +18,16 @@
 @property (nonatomic) CGPoint strumCood;
 @property (nonatomic) bool tapModeValue;
 
+//@property (nonatomic) NSMutableArray *options;
+
 @property (strong, nonatomic) IBOutlet UIImageView *firstString;
 @property (strong, nonatomic) IBOutlet UIImageView *secondString;
 @property (strong, nonatomic) IBOutlet UIImageView *thirdString;
 @property (strong, nonatomic) IBOutlet UIImageView *fourthString;
+
+@property (strong, nonatomic) IBOutlet UIButton *openOptions;
+
+//@property NSMutableArray *optionsArray;
 
 //Methods
 -(void)touchCoodrinates:(NSSet *)touches withEvent:(UIEvent *)event;

@@ -159,8 +159,19 @@
                                     <action selector="tapMode:" destination="N6y-6P-isJ" eventType="valueChanged" id="nxW-2T-U33"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Effects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP6-qw-MhN">
-                                <rect key="frame" x="537" y="20" width="54" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP6-qw-MhN">
+                                <rect key="frame" x="528" y="20" width="77" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-L8-2K4">
+                                <rect key="frame" x="542" y="207" width="51" height="31"/>
+                                <animations/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sustain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgh-Uv-bXp">
+                                <rect key="frame" x="538" y="159" width="57" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -618,7 +629,8 @@
                                 <animations/>
                                 <state key="normal" title="Options"/>
                                 <connections>
-                                    <segue destination="N6y-6P-isJ" kind="popoverPresentation" popoverAnchorView="2y3-EM-nU7" id="qgE-1p-HZU">
+                                    <action selector="openOptions:" destination="BYZ-38-t0r" eventType="touchDown" id="zto-IJ-8nn"/>
+                                    <segue destination="N6y-6P-isJ" kind="popoverPresentation" identifier="options" popoverAnchorView="2y3-EM-nU7" id="qgE-1p-HZU">
                                         <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
                                     </segue>
                                 </connections>
@@ -633,6 +645,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="firstStringView" destination="Vwb-RG-UY2" id="dWI-zX-H5x"/>
+                        <outlet property="openOptions" destination="2y3-EM-nU7" id="vMt-H3-C4R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

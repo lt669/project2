@@ -16,18 +16,18 @@
 
 
 @interface ViewController()
-//@property (nonatomic) CGPoint coordinates;
 
 //Declare Swiping methods (NOT USED)
 -(void)slideDownFirstStringWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer;
 -(void)slideUpFirstStringWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer;
 -(void)touchCoodrinates;
 
-
 @property (strong, nonatomic) IBOutlet UIView *firstStringView;
 @property (strong, nonatomic) IBOutlet UIView *secondStringView;
 
 @end
+
+//NSMutableArray *optionsArray;
 
 @implementation ViewController
 {
@@ -37,6 +37,8 @@
     //Create array for notes and currently played notes
     NSArray *frequencies;
     NSMutableDictionary *currentNotes;
+//    NSMutableArray *optionsArray;
+    float optionsArray[3];
     
     //CGPoint for tracking finger movement
     //CGPoint *strumCood;
@@ -49,9 +51,24 @@
     
 }
 
-@synthesize amplitude, strumCood, tapModeValue;
+@synthesize amplitude, strumCood, tapModeValue/*, optionsArray*/;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Declare options array
+ //   NSMutableArray *optionsArray = [[NSMutableArray alloc]init];
+//    [optionsArray addObject: [NSNumber numberWithFloat:6]]; //Amplitude
+//    [optionsArray addObject: [NSNumber numberWithFloat:5]]; //detune Value
+//    [optionsArray addObject: [NSNumber numberWithFloat:4]]; //Body size value
+//    [optionsArray addObject: [NSNumber numberWithBool:true]]; //tapMode
+//    
+    
+//    float sum = [[optionsArray objectAtIndex:1] floatValue];
+//    int NumberOfObjects = [optionsArray count];
+//    
+//    NSLog(@"Array Vale: %f Number: %i", sum, NumberOfObjects);
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
     
     //Load all the frequency values into a dictionary
@@ -137,16 +154,46 @@
     [newInstrument.bodySize setValue:view2.bodySizeSliderValue];
 
     tapModeValue = view2.tapMode;
-    NSLog(tapModeValue ? @"True" : @"False");
+   // NSLog(tapModeValue ? @"True" : @"False");
+    
+        optionsArray[0] = view2.volumeSliderValue;
+        optionsArray[1] = view2.detuneSliderValue;
+        optionsArray[2] = view2.bodySizeSliderValue;
         
-//        /*********************TESTING*********************/
-//        NSLog(@"view2.sliderValue: %f", view2.volumeSliderValue); //Check they are the same value (DEBUGGING)
-//        NSLog(@"Amplitude: %f", amplitude);
-//        [newInstrument getAmplitude];
-        /*********************TESTING*********************/
+        NSLog(@"actualy value: %f [unwind array] %f",view2.volumeSliderValue,optionsArray[0]);
+        NSLog(@"Array Vale: %f", optionsArray[0]);
     }
 }
 /***********************Unwind Segue***********************/
+
+
+
+- (IBAction)openOptions:(UIButton *)sender {
+   // NSMutableArray *optionsArray = [[NSMutableArray alloc]init];
+//    [self performSegueWithIdentifier:@"options" sender:optionsArray];
+}
+
+
+
+/***********************Prepare For Segue***********************/
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"options"])
+    {
+        // Get reference to the destination view controller
+       // ViewController2 *vc2 = (ViewController2 *) segue.destinationViewController;
+        
+        ViewController2 *vc2 =[segue destinationViewController];
+        
+        //Send the previously saved options values back to viewController2
+        vc2.volumeSliderValueReceive = optionsArray[0];
+        vc2.detuneSliderValueReceive = optionsArray[1];
+        vc2.bodySizeSliderValueReceive = optionsArray[2];
+        
+        NSLog(@"[prepare array] %f", optionsArray[0]);
+    }
+}
+/***********************Prepare For Segue***********************/
 
 
 /***********************playNote Method***********************/

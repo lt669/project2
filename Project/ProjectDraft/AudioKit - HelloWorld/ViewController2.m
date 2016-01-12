@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 
 #import "ViewController2.h"
+#import "ViewController.h"
 
 @interface ViewController2()
 //@property (nonatomic) CGPoint coordinates;
 
 
 @end
+
+//NSMutableArray *optionsValuesArray;
+
 @implementation ViewController2
 {
     IBOutlet UISlider *volume;
@@ -26,8 +30,10 @@
     IBOutlet UILabel *bodySizeLabel;
     
     IBOutlet UISwitch *tapModeSwitch;
+    
+    //float optionsValuesArray[3];
 }
-@synthesize volumeSliderValue, detuneSliderValue, bodySizeSliderValue;
+@synthesize volumeSliderValue, detuneSliderValue, bodySizeSliderValue, optionsValuesArray, volumeSliderValueReceive, detuneSliderValueReceive, bodySizeSliderValueReceive, tapModeReceive;
 
 - (IBAction)defaultSettings:(id)sender {
     volume.value = 0.5;
@@ -42,12 +48,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     amplitudeLabel.text = [NSString stringWithFormat:@"50%%"];
     detuneLabel.text = [NSString stringWithFormat:@"50%%"];
     bodySizeLabel.text = [NSString stringWithFormat:@"50%%"];
     [tapModeSwitch setOn:YES animated:YES];
+
+
+    //Receive the previously saved sliders values and reset the sliders
+    volume.value = volumeSliderValueReceive;
+    detuneValue.value = detuneSliderValueReceive;
+    bodySize.value = bodySizeSliderValueReceive;
+    
+    //Reset the slider lables
+    amplitudeLabel.text = [NSString stringWithFormat:@"%0.0f%%",(volumeSliderValueReceive*100)];
+    detuneLabel.text = [NSString stringWithFormat:@"%0.0f%%",(detuneSliderValueReceive*100)];
+    bodySizeLabel.text = [NSString stringWithFormat:@"%0.0f%%",(bodySizeSliderValueReceive*100)];
+    
 }
-                        
+
 - (IBAction)volumeChanged:(UISlider *)sender { //Set label values
     
     amplitudeLabel.text = [NSString stringWithFormat:@"%0.0f%%",(volume.value*100)]; //In Percentage
@@ -76,11 +95,14 @@
     } else {
             // NSLog(@"OFF");
             self.tapMode = false;
-        
-        volume.value = volume.value;
     }
+    
+    NSLog(@"[saved] %f",volumeSliderValue);
 }
 
+-(void)setArray{
+    
+}
 
 ////sending data from here to ViewController (main page)
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
