@@ -169,6 +169,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-L8-2K4">
                                 <rect key="frame" x="542" y="207" width="51" height="31"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="sustainMode:" destination="N6y-6P-isJ" eventType="valueChanged" id="h1F-l7-f4Q"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sustain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgh-Uv-bXp">
                                 <rect key="frame" x="538" y="159" width="57" height="21"/>
@@ -196,6 +199,7 @@
                         <outlet property="bodySizeLabel" destination="VgJ-oB-Wxj" id="N5T-gK-bcm"/>
                         <outlet property="detuneLabel" destination="FdQ-Kp-74D" id="TdB-I0-6eB"/>
                         <outlet property="detuneValue" destination="dy0-oQ-JLE" id="5HI-jX-IgX"/>
+                        <outlet property="sustainModeSwitch" destination="T6c-L8-2K4" id="V8L-eM-vl6"/>
                         <outlet property="tapModeSwitch" destination="zaf-ty-Clk" id="PHa-8d-BGe"/>
                         <outlet property="volume" destination="pEt-nk-Cf7" id="c7u-nF-NYh"/>
                     </connections>

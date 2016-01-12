@@ -16,7 +16,8 @@
 @property (nonatomic) CGPoint coordinates;
 @property (nonatomic) float amplitude;
 @property (nonatomic) CGPoint strumCood;
-@property (nonatomic) bool tapModeValue;
+@property (nonatomic) int tapModeValue;
+@property (nonatomic) int sustainModeValue;
 
 //@property (nonatomic) NSMutableArray *options;
 
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *fourthString;
 
 @property (strong, nonatomic) IBOutlet UIButton *openOptions;
+@property (nonatomic) int firstLoad;
 
 //@property NSMutableArray *optionsArray;
 

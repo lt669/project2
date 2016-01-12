@@ -17,16 +17,18 @@
 @property (nonatomic) float detuneSliderValue;
 @property (nonatomic) float bodySizeSliderValue;
 @property (nonatomic) bool tapMode;
+@property (nonatomic) bool sustainMode;
 
 @property (nonatomic) float volumeSliderValueReceive;
 @property (nonatomic) float detuneSliderValueReceive;
 @property (nonatomic) float bodySizeSliderValueReceive;
-@property (nonatomic) bool tapModeReceive;
+@property (nonatomic) int tapModeInt;
+@property (nonatomic) int sustainModeInt;
+@property (nonatomic) int firstLoadReceive;
+
 
 
 //@property NSMutableArray *optionsValuesArrayProperty;
 @property float optionsValuesArray;
 -(void)setArray;
-
-
 @end

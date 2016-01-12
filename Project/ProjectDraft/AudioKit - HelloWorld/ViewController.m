@@ -51,25 +51,10 @@
     
 }
 
-@synthesize amplitude, strumCood, tapModeValue/*, optionsArray*/;
+@synthesize amplitude, strumCood, tapModeValue,sustainModeValue, firstLoad;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Declare options array
- //   NSMutableArray *optionsArray = [[NSMutableArray alloc]init];
-//    [optionsArray addObject: [NSNumber numberWithFloat:6]]; //Amplitude
-//    [optionsArray addObject: [NSNumber numberWithFloat:5]]; //detune Value
-//    [optionsArray addObject: [NSNumber numberWithFloat:4]]; //Body size value
-//    [optionsArray addObject: [NSNumber numberWithBool:true]]; //tapMode
-//    
-    
-//    float sum = [[optionsArray objectAtIndex:1] floatValue];
-//    int NumberOfObjects = [optionsArray count];
-//    
-//    NSLog(@"Array Vale: %f Number: %i", sum, NumberOfObjects);
-    
-    
-    // Do any additional setup after loading the view, typically from a nib.
     
     //Load all the frequency values into a dictionary
     frequencies = @[@622.3,	@659.3,	@698.5,	@740.0,	@784.0,	@830.6,	@880.0, @932.3,	@987.8, @1047,	@1109,	@1175,	@1245,	@1319,	@1397, @1480,	@1568,	@1661,	@1760,	@1865,	@1976,
@@ -85,22 +70,10 @@
     
     [self.firstStringView addObserver:self  forKeyPath:@"fingerPosition" options:NSKeyValueObservingOptionNew context:Nil];
     
+    //TapMode is the default setting when opening the app
+    tapModeValue = 1;
+    sustainModeValue = 1;
   
-    
-    /***********************SWIPES DON'T WORK***********************/
-    //Set up swipe gestures
-    
-    //First String
-//    UISwipeGestureRecognizer *swipeDownFirstString = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(slideDownFirstStringWithGestureRecognizer:)];
-//    swipeDownFirstString.direction = UISwipeGestureRecognizerDirectionDown;
-//    
-//    UISwipeGestureRecognizer *swipeUpFirstString = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(slideUpFirstStringWithGestureRecognizer:)];
-//    swipeUpFirstString.direction = UISwipeGestureRecognizerDirectionUp;
-//    
-//    
-//    [self.firstString addGestureRecognizer:swipeDownFirstString];
-//    [self.firstString addGestureRecognizer:swipeUpFirstString];
-    /***********************SWIPES DON'T WORK***********************/
 }
 
 
@@ -124,8 +97,45 @@
     }
 }
 
+/***********************playNote Method***********************/
+-(void)playNote:(int)tagNumber{ //Method for playing a specific note
+    //Initialise note object
+    note = [[NewInstrumentNote alloc]init];
+    
+    //Set the frequency to the note
+    note.frequency.value = [[frequencies objectAtIndex:tagNumber] floatValue];
+    
+    // Play the note
+    [newInstrument playNote:note];
+    
+    // Save the note object to an array
+    [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tagNumber]];
+}
+/***********************playNote Method***********************/
+
 
 - (IBAction)keyReleased:(id)sender {
+    
+    NSInteger tag = [(UIButton *)sender tag]; //Receive tag
+    
+//    if(sustainModeValue == TRUE){
+//        // Recieve the tag of the button pressed
+//        NSInteger tag = [(UIButton *)sender tag];
+//    
+        // Get the key note instance from the tag property
+        NewInstrumentNote *noteToRelease = [currentNotes objectForKey:[NSNumber numberWithInt:(int)tag]];
+        noteToRelease = [[NewInstrumentNote alloc]init];
+    
+        // Stop the note
+//        [newInstrument stopNote:noteToRelease];
+                [newInstrument stopNote:noteToRelease];
+    // Remove the note from the array
+     [currentNotes removeObjectForKey:[NSNumber numberWithInt:(int)tag]];
+//
+//   } else {
+//        //Do nothing
+//   }
+    
     
     //    // Recieve the tag of the button pressed
     //    NSInteger tag = [(UIButton *)sender tag];
@@ -153,15 +163,18 @@
     [newInstrument.detune setValue:view2.detuneSliderValue];
     [newInstrument.bodySize setValue:view2.bodySizeSliderValue];
 
-    tapModeValue = view2.tapMode;
-   // NSLog(tapModeValue ? @"True" : @"False");
-    
-        optionsArray[0] = view2.volumeSliderValue;
-        optionsArray[1] = view2.detuneSliderValue;
-        optionsArray[2] = view2.bodySizeSliderValue;
+    tapModeValue = view2.tapModeInt;
+    sustainModeValue = view2.sustainModeInt;
         
-        NSLog(@"actualy value: %f [unwind array] %f",view2.volumeSliderValue,optionsArray[0]);
-        NSLog(@"Array Vale: %f", optionsArray[0]);
+    optionsArray[0] = view2.volumeSliderValue;
+    optionsArray[1] = view2.detuneSliderValue;
+    optionsArray[2] = view2.bodySizeSliderValue;
+    
+    NSLog(@"actualy value: %f [unwind array] %f",view2.volumeSliderValue,optionsArray[0]);
+    NSLog(@"Array Vale: %f", optionsArray[0]);
+    
+    firstLoad = 1;
+    
     }
 }
 /***********************Unwind Segue***********************/
@@ -189,28 +202,15 @@
         vc2.volumeSliderValueReceive = optionsArray[0];
         vc2.detuneSliderValueReceive = optionsArray[1];
         vc2.bodySizeSliderValueReceive = optionsArray[2];
+        vc2.tapModeInt = tapModeValue;
+        vc2.sustainModeInt = sustainModeValue;
+        vc2.firstLoadReceive = firstLoad;
         
         NSLog(@"[prepare array] %f", optionsArray[0]);
     }
 }
 /***********************Prepare For Segue***********************/
 
-
-/***********************playNote Method***********************/
--(void)playNote:(int)tagNumber{ //Method for playing a specific note
-    //Initialise note object
-    note = [[NewInstrumentNote alloc]init];
-    
-    //Set the frequency to the note
-    note.frequency.value = [[frequencies objectAtIndex:tagNumber] floatValue];
-    
-    // Play the note
-    [newInstrument playNote:note];
-    
-    // Save the note object to an array
-    [currentNotes setObject:note forKey:[NSNumber numberWithInt:(int)tagNumber]];
-}
-/***********************playNote Method***********************/
 
 /***********************Touch Regions Methods***********************/
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -252,13 +252,6 @@
     
 }
 /***********************Touch Regions Methods***********************/
-
-
-
-
-
-
-
 
 
  /***********************Debug Methods***********************/
