@@ -1,0 +1,45 @@
+App Name: MANDiLIN
+
+App Description
+————————————————
+MANDiLIN is an interactive mandolin designed for the iPad designed to be easy to use for professional and amateur musicians everywhere. With the use of accurate physical models MANDiLIN lets you simulate the sound of a large range of different styles of mandolin.
+
+Categories
+——————————
+Primary: Music
+Secondary: N/A
+Subcategories N/A
+
+Copyright
+——————————
+Lewis Thresh 14/01/16
+
+App Rating
+——————————
+5
+
+User101: This app is fantastic. The variable parameters provides hours of fun. It feels like i’m playing a brand new mandolin every time! 5/5
+
+appMaster97: This app is extremely intuitive and completely bug free. The ability to swap between strum and tap mode is brilliant and it makes learning mandolin easy with the ability to see where all the notes are! 6/5
+
+gamerGurl18: I accidentally downloaded this while looking for AngryBirds lul but this is so much better OMG! 7/5
+
+Keywords
+—————————
+Mandolin, iPad, music lessons, interactive
+
+SKU Number
+——————————
+MandyAppsMANDiLINV1
+
+Pricing
+————————
+Tier 0 - Free
+
+Available Date
+———————————————
+14/01/16
+
+Territories
+————————————
+Worldwide

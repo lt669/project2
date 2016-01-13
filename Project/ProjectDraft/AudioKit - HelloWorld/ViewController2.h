@@ -24,11 +24,9 @@
 @property (nonatomic) float bodySizeSliderValueReceive;
 @property (nonatomic) int tapModeInt;
 @property (nonatomic) int sustainModeInt;
+@property (nonatomic) int showNotesInt;
 @property (nonatomic) int firstLoadReceive;
 
-
-
-//@property NSMutableArray *optionsValuesArrayProperty;
 @property float optionsValuesArray;
--(void)setArray;
+
 @end

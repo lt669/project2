@@ -79,25 +79,6 @@
     NSLog(@"Get Amplitude Called!");
 }
 
-//- (IBAction)myUnwindAction:(UIStoryboardSegue*)unwindSegue{
-//    //Set volume here
-//    //ViewController2 *view = [segue sourceViewController];
-//    
-//    NSLog(@"Unwindedededed"); //Debugging
-//    
-//    if ([unwindSegue.identifier isEqualToString:@"saved"]) {
-//        ViewController2 *view2 = (ViewController2 *)unwindSegue.sourceViewController;
-//        NSLog(@"Violets are %f", view2.sliderValue);
-//        
-//        //Retrieve the slider value
-//        amp = view2.sliderValue;
-//        
-//        NSLog(@"Amplitude %f", amp);
-//        
-//        //amplitude = newInstrument.amp;
-//    }
-//}
-
 @end
 
 @implementation NewInstrumentNote
@@ -109,7 +90,6 @@
     if (self) {
         
         frequency = [self createPropertyWithValue:440 minimum:20 maximum:20000];
-        
        // self.duration.value = 2; // Useful for testing polyphony in the simulator - not required if a keyReleased method is used
         
     }

@@ -18,6 +18,7 @@
 @property (nonatomic) CGPoint strumCood;
 @property (nonatomic) int tapModeValue;
 @property (nonatomic) int sustainModeValue;
+@property (nonatomic) int showNotesValue;
 
 //@property (nonatomic) NSMutableArray *options;
 
@@ -29,11 +30,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *openOptions;
 @property (nonatomic) int firstLoad;
 
-//@property NSMutableArray *optionsArray;
 
 //Methods
 -(void)touchCoodrinates:(NSSet *)touches withEvent:(UIEvent *)event;
-
+-(void)showNotesSettings;
 
 @end
 

@@ -200,6 +200,8 @@
 		F6777DE71C4330B40036CB29 /* EffectsProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F6777DE61C4330B40036CB29 /* EffectsProcessor.m */; settings = {ASSET_TAGS = (); }; };
 		F6777DE91C43523A0036CB29 /* Mandolin copy.png in Resources */ = {isa = PBXBuildFile; fileRef = F6777DE81C43523A0036CB29 /* Mandolin copy.png */; settings = {ASSET_TAGS = (); }; };
 		F6777DEB1C4352E80036CB29 /* Mandolin copy 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6777DEA1C4352E80036CB29 /* Mandolin copy 2.png */; settings = {ASSET_TAGS = (); }; };
+		F6D702DA1C45726F0029B1F9 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = F6D702D91C45726F0029B1F9 /* question.png */; settings = {ASSET_TAGS = (); }; };
+		F6D702DC1C4573010029B1F9 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = F6D702DB1C4573010029B1F9 /* save.png */; settings = {ASSET_TAGS = (); }; };
 		F6E2D9021C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90A1C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */; settings = {ASSET_TAGS = (); }; };
 		F6E2D90F1C3CA062008DEE1C /* Strings_V2.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */; settings = {ASSET_TAGS = (); }; };
@@ -620,6 +622,8 @@
 		F6777DE61C4330B40036CB29 /* EffectsProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectsProcessor.m; sourceTree = "<group>"; };
 		F6777DE81C43523A0036CB29 /* Mandolin copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mandolin copy.png"; sourceTree = "<group>"; };
 		F6777DEA1C4352E80036CB29 /* Mandolin copy 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mandolin copy 2.png"; sourceTree = "<group>"; };
+		F6D702D91C45726F0029B1F9 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		F6D702DB1C4573010029B1F9 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		F6E2D9011C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Light-Wood-Background-Wallpaper.jpg"; sourceTree = "<group>"; };
 		F6E2D9091C3C9DB9008DEE1C /* Regal_Blue_Comet_mandolin_fretboardV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regal_Blue_Comet_mandolin_fretboardV3.png; sourceTree = "<group>"; };
 		F6E2D90B1C3CA062008DEE1C /* Strings_V2.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Strings_V2.1.png; sourceTree = "<group>"; };
@@ -687,6 +691,8 @@
 		6054CA781B3ACB41008D2E50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6D702DB1C4573010029B1F9 /* save.png */,
+				F6D702D91C45726F0029B1F9 /* question.png */,
 				F6777DEA1C4352E80036CB29 /* Mandolin copy 2.png */,
 				F6777DE81C43523A0036CB29 /* Mandolin copy.png */,
 				F6777DE51C4330B40036CB29 /* EffectsProcessor.h */,
@@ -1554,7 +1560,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = "Sam Beedell";
+				ORGANIZATIONNAME = Y8185682;
 				TargetAttributes = {
 					6054CA741B3ACB41008D2E50 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -1596,6 +1602,7 @@
 				6054CA891B3ACB41008D2E50 /* LaunchScreen.xib in Resources */,
 				6054CD051B3ADCEC008D2E50 /* Main.storyboard in Resources */,
 				6054CCFD1B3ACBCF008D2E50 /* PianoBassDrumLoop.wav in Resources */,
+				F6D702DC1C4573010029B1F9 /* save.png in Resources */,
 				6054CCCA1B3ACBCF008D2E50 /* LICENSE.TXT in Resources */,
 				6054CCFA1B3ACBCF008D2E50 /* dish.wav in Resources */,
 				6054CCF91B3ACBCF008D2E50 /* 808loop.wav in Resources */,
@@ -1606,6 +1613,7 @@
 				6054CCFC1B3ACBCF008D2E50 /* marmstk1.wav in Resources */,
 				F6777DE91C43523A0036CB29 /* Mandolin copy.png in Resources */,
 				F6E2D9021C3C3F64008DEE1C /* Light-Wood-Background-Wallpaper.jpg in Resources */,
+				F6D702DA1C45726F0029B1F9 /* question.png in Resources */,
 				6054CA861B3ACB41008D2E50 /* Images.xcassets in Resources */,
 				F6E2D9101C3CA062008DEE1C /* Strings_V2.2.png in Resources */,
 				F6E2D9121C3CA062008DEE1C /* Strings_V2.4.png in Resources */,
